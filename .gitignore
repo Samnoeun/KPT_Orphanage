@@ -14,10 +14,16 @@
 # # backend/storage/framework/sessions/
 # # backend/storage/framework/views/
 
+<<<<<<< HEAD
+# Laravel environment & cache
+backend/.env
+backend/.phpunit.result.cache
+=======
 # # Laravel environment & cache
 # backend/.env
 # # backend/.env
 # backend/.phpunit.result.cache
+>>>>>>> 6ec43ae8f134bee73d034f9ebc97e0858961b5f3
 
 # # Laravel IDE helper (optional)
 # backend/_ide_helper.php
