@@ -11,12 +11,7 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('home_contents', function (Blueprint $table) {
-            $table->id();
-            $table->string('title');
-            $table->string('image'); // path to image
-            $table->timestamps();
-        });
+        //
     }
 
     /**
@@ -24,6 +19,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('home_contents');
+        //
     }
 };
