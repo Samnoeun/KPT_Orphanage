@@ -11,7 +11,7 @@ class UpdateStaffRequest extends FormRequest
      */
     public function authorize(): bool
     {
-        return true;
+        return false;
     }
 
     /**
@@ -21,9 +21,14 @@ class UpdateStaffRequest extends FormRequest
      */
     public function rules(): array
     {
+        $staffId = $this->route('staff')->id;
+
         return [
-            'email' => 'required|email|unique:staff,email,' . $this->staff->id,
-            'name' => 'required|string|max:255'
+            'name' => 'required|string|max:255',
+            'email' => 'required|email|unique:staff,email,' . $staffId,
+            'description' => 'nullable|string',
+            'position' => 'nullable|string|max:100',
+            'profile' => 'nullable|image|mimes:jpg,jpeg,png|max:2048',
         ];
     }
 }
