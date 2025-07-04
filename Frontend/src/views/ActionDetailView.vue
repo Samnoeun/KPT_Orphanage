@@ -31,7 +31,7 @@
 <script setup>
 import { computed } from 'vue'
 import { useRoute, useRouter } from 'vue-router'
-import { Icon } from '@iconify/vue'
+// import { Icon } from '@iconify/vue'
 
 const route = useRoute()
 const router = useRouter()
