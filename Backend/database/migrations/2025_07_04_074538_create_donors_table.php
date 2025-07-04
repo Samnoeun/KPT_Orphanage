@@ -11,8 +11,13 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('home_contents', function (Blueprint $table) {
+        Schema::create('donors', function (Blueprint $table) {
             $table->id();
+            $table->string('name');
+            $table->string('email');
+            $table->string('bankName');
+            $table->decimal('amount', 10, 2);
+            $table->string('Description');
             $table->timestamps();
         });
     }
@@ -22,6 +27,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('home_contents');
+        Schema::dropIfExists('donors');
     }
 };
