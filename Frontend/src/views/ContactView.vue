@@ -1,34 +1,37 @@
 <template>
-  <div class="min-h-screen">
-    <div class="relative w-full h-[400px] overflow-hidden mb-12 shadow-lg">
+  <div class="min-h-screen bg-gray-50">
+    <!-- Full-width Slideshow Banner with Overlay -->
+    <div class="relative w-full h-[600px] overflow-hidden mb-12 shadow-lg">
       <transition name="fade" mode="out-in">
-        <img :src="currentSlide" :key="currentSlide" alt="Slideshow banner"
-          class="absolute inset-0 object-cover w-full h-full transition-opacity duration-1000" />
+        <img
+          :src="currentSlide"
+          :key="currentSlide"
+          alt="Slideshow banner"
+          class="absolute inset-0 object-cover w-full h-full transition-opacity duration-1000"
+        />
       </transition>
       <!-- Overlay Content -->
       <div class="absolute inset-0 flex flex-col items-center justify-center z-20 text-center"
         style="background: rgba(0,0,0,0.35);">
-        <h1 class="text-4xl md:text-5xl font-extrabold text-white drop-shadow-lg mb-4 animate-fadein">
+        <h1 class="text-4xl md:text-6xl font-extrabold text-white drop-shadow-lg mb-4 animate-fadein">
           Contact Us
         </h1>
-        <p class="text-lg md:text-xl text-white/90 mb-6 max-w-2xl animate-fadein delay-200">
+        <p class="text-lg md:text-2xl text-white/90 mb-6 max-w-2xl animate-fadein delay-200">
+          We’re here to help! Reach out for support, partnership, or to learn more about our mission and how you can make a difference in the lives of children.
         </p>
         <button @click="openLocation"
-          class="bg-orange-500 hover:bg-orange-600 text-white font-semibold px-8 py-3 rounded-full shadow-lg transition-all duration-300 animate-fadein delay-400">
+          class="bg-orange-500 hover:bg-orange-600 text-white font-semibold px-10 py-4 rounded-full shadow-lg transition-all duration-300 animate-fadein delay-400 text-lg">
           Visit Us
         </button>
       </div>
-      <div class="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex space-x-2 z-30">
-        <button v-for="(slide, index) in slideImages" :key="index" class="w-3 h-3 rounded-full border-2 border-white"
+      <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 flex space-x-2 z-30">
+        <button v-for="(slide, index) in slideImages" :key="index" class="w-4 h-4 rounded-full border-2 border-white"
           :class="currentSlideIndex === index ? 'bg-orange-500' : 'bg-white opacity-70'"
           @click="setSlide(index)"></button>
       </div>
     </div>
+
     <div class="container mx-auto px-4 max-w-7xl">
-
-      <!-- Slideshow Banner with Overlay -->
-
-
       <!-- Interactive Info Cards -->
       <div class="grid md:grid-cols-3 gap-8 mb-16">
         <div
@@ -230,21 +233,17 @@ const setSlide = (index) => {
 .animate-fadein {
   animation: fadein 1s both;
 }
-
 .animate-fadein.delay-200 {
   animation-delay: 0.2s;
 }
-
 .animate-fadein.delay-400 {
   animation-delay: 0.4s;
 }
-
 @keyframes fadein {
   from {
     opacity: 0;
     transform: translateY(20px);
   }
-
   to {
     opacity: 1;
     transform: translateY(0);
