@@ -1,7 +1,6 @@
 <template>
   <div class="min-h-screen flex flex-col">
-    <!-- The navbar can go here if you want -->
-    <Navbar :links="navLinks" logo="/images/logo.png" />
+    <Navbar :links="navLinks" logo="/src/assets/image/image-removebg-preview (1).png" />
     <main class="pt-16">
       <RouterView />
     </main>
@@ -20,9 +19,9 @@ import Navbar from './components/Navbar.vue'
 
 const navLinks = [
   { label: 'Home', to: '/' },
-  { label: 'About', to: '/about' },
-  { label: 'Contact', to: '/contact' },
-  { label: 'Donate', to: '/donate' }
+  { label: 'About', to: '/about'},
+  { label: 'Contact', to: '/contact'},
+  { label: 'Donate', to: '/donate', icon: 'fas fa-heart' }
 ]
 
 const contactInfo = {
