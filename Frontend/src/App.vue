@@ -1,16 +1,10 @@
 <template>
   <div class="min-h-screen flex flex-col">
-    <!-- The navbar can go here if you want -->
-    <Navbar :links="navLinks" logo="/images/logo.png" />
+    <Navbar :links="navLinks" logo="/src/assets/image/image-removebg-preview (1).png" />
     <main class="pt-16">
       <RouterView />
     </main>
-    <Footer
-      :links="navLinks"
-      :location="contactInfo"
-      :socials="socialMedia"
-      :sponsors="sponsorList"
-    />
+    <Footer :links="navLinks" :location="contactInfo" :socials="socialMedia" :sponsors="sponsorList" />
   </div>
 </template>
 
@@ -22,7 +16,7 @@ const navLinks = [
   { label: 'Home', to: '/' },
   { label: 'About', to: '/about' },
   { label: 'Contact', to: '/contact' },
-  { label: 'Donate', to: '/donate' }
+  { label: 'Donate', to: '/donate', icon: 'fas fa-heart' }
 ]
 
 const contactInfo = {
