@@ -4,12 +4,7 @@
     <main class="pt-16">
       <RouterView />
     </main>
-    <Footer
-      :links="navLinks"
-      :location="contactInfo"
-      :socials="socialMedia"
-      :sponsors="sponsorList"
-    />
+    <Footer :links="navLinks" :location="contactInfo" :socials="socialMedia" :sponsors="sponsorList" />
   </div>
 </template>
 
@@ -19,8 +14,8 @@ import Navbar from './components/Navbar.vue'
 
 const navLinks = [
   { label: 'Home', to: '/' },
-  { label: 'About', to: '/about'},
-  { label: 'Contact', to: '/contact'},
+  { label: 'About', to: '/about' },
+  { label: 'Contact', to: '/contact' },
   { label: 'Donate', to: '/donate', icon: 'fas fa-heart' }
 ]
 
