@@ -397,6 +397,7 @@ import gallery2 from '@/assets/images/gallery2.jpg'
 import gallery3 from '@/assets/images/gallery3.jpg'
 import gallery4 from '@/assets/images/gallery4.jpg'
 import partner1 from '@/assets/images/partner1.jpg'
+import partner2 from '@/assets/images/partner2.jpg'
 import partner3 from '@/assets/images/partner3.jpg'
 import partner4 from '@/assets/images/partner4.jpg'
 

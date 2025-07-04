@@ -366,78 +366,59 @@
 
     <section class="py-20 bg-white">
       <div class="container mx-auto px-6 lg:px-12">
-        <div class="max-w-6xl mx-auto">
-          <div class="text-center mb-12">
-            <h2
-              class="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-orange-100 text-orange-600 font-extrabold text-2xl md:text-3xl mb-6"
-              style="box-shadow: 0 4px 6px rgb(251 146 60 / 0.3);"
-            >
-              <!-- Users Group Icon -->
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                class="w-6 h-6"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-              >
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
-                  d="M17 20h5v-2a3 3 0 00-3-3h-2M9 20H4v-2a3 3 0 013-3h2m6-3a4 4 0 100-8 4 4 0 000 8zM5 10a2 2 0 104 0 2 2 0 00-4 0zM15 10a2 2 0 104 0 2 2 0 00-4 0z"
-                />
-              </svg>
-              Our Community in Action
-            </h2>
-            <p
-              class="text-lg text-gray-600 text-center"
-            >See the impact we're making together in Kompong Thom province</p>
-          </div>
+        <div class="text-center mb-12 text-gray-800">
+          <h2 class="text-3xl font-bold mb-4">Our Community in Action</h2>
+          <p class="text-gray-600">Click any program to learn more</p>
+        </div>
 
-          <div class="grid md:grid-cols-3 gap-8">
-            <div
-              class="relative group overflow-hidden rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300"
-            >
-              <img
-                src="../assets/image/education.jpg"
-                alt="Community education program"
-                class="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-300"
-              />
-              <div class="absolute inset-0 bg-gradient-to-t from-blue-500/50 to-transparent"></div>
-              <div class="absolute bottom-4 left-4 text-white text-left">
-                <h3 class="text-lg font-semibold">Education Programs</h3>
-                <p class="text-sm opacity-90">Empowering through learning</p>
-              </div>
+        <div class="grid md:grid-cols-3 gap-8">
+          <!-- Education -->
+          <router-link
+            :to="{ name: 'ProgramDetail', params: { topic: 'education' } }"
+            class="group relative overflow-hidden rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300"
+          >
+            <img
+              src="../assets/image/education.jpg"
+              class="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-300"
+            />
+            <div class="absolute inset-0 bg-gradient-to-t from-blue-500/50 to-transparent"></div>
+            <div class="absolute bottom-4 left-4 text-white">
+              <h3 class="text-lg font-semibold">Education Programs</h3>
+              <p class="text-sm opacity-90">Empowering through learning</p>
             </div>
-            <div
-              class="relative group overflow-hidden rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300"
-            >
-              <img
-                src="../assets/image/health.webp"
-                alt="Healthcare outreach program"
-                class="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-300"
-              />
-              <div class="absolute inset-0 bg-gradient-to-t from-blue-500/50 to-transparent"></div>
-              <div class="absolute bottom-4 left-4 text-white text-left">
-                <h3 class="text-lg font-semibold">Healthcare Outreach</h3>
-                <p class="text-sm opacity-90">Bringing care to communities</p>
-              </div>
+          </router-link>
+
+          <!-- Healthcare -->
+          <router-link
+            :to="{ name: 'ProgramDetail', params: { topic: 'healthcare' } }"
+            class="group relative overflow-hidden rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300"
+          >
+            <img
+              src="../assets/image/health.webp"
+              class="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-300"
+            />
+            <div class="absolute inset-0 bg-gradient-to-t from-blue-500/50 to-transparent"></div>
+            <div class="absolute bottom-4 left-4 text-white">
+              <h3 class="text-lg font-semibold">Healthcare Outreach</h3>
+              <p class="text-sm opacity-90">Bringing care to communities</p>
             </div>
-            <div
-              class="relative group overflow-hidden rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300"
-            >
-              <img
-                src="../assets/image/cultural.jpg"
-                alt="Cultural preservation activities"
-                class="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-300"
-              />
-              <div class="absolute inset-0 bg-gradient-to-t from-blue-500/50 to-transparent"></div>
-              <div class="absolute bottom-4 left-4 text-white text-left">
-                <h3 class="text-lg font-semibold">Cultural Events</h3>
-                <p class="text-sm opacity-90">Preserving our heritage</p>
-              </div>
+          </router-link>
+
+          <!-- Cultural -->
+          <router-link
+            :to="{ name: 'ProgramDetail', params: { topic: 'cultural' } }"
+            class="group relative overflow-hidden rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300"
+          >
+            <img
+              src="../assets/image/cultural.jpg"
+              class="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-300"
+            />
+            <div class="absolute inset-0 bg-gradient-to-t from-blue-500/50 to-transparent"></div>
+            <div class="absolute bottom-4 left-4 text-white">
+              <h3 class="text-lg font-semibold">Cultural Events</h3>
+              <p class="text-sm opacity-90">Preserving our heritage</p>
             </div>
-          </div>
+          </router-link>
         </div>
       </div>
     </section>
@@ -455,7 +436,12 @@
               class="bg-orange-200 font-extrabold text-orange-600 px-8 py-3 rounded-full hover:bg-orange-300 transition-all duration-300 inline-flex items-center gap-2"
             >
               <svg class="mr-2 h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/>
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"
+                />
               </svg>
               Get In Touch
             </a>
