@@ -4,25 +4,18 @@ namespace App\Http\Controllers;
 
 use App\Models\Donor;
 use Illuminate\Http\Request;
+use App\Http\Resources\DonorResource;
 
 class DonorController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     */
     public function index()
     {
-        // Get all donors
-        $donors = Donor::all();
-        return response()->json($donors);
+        // Return all donors as a collection
+        return DonorResource::collection(Donor::all());
     }
 
-    /**
-     * Store a newly created resource in storage.
-     */
     public function store(Request $request)
     {
-        // Validate input
         $validated = $request->validate([
             'name' => 'required|string|max:255',
             'email' => 'required|email',
@@ -31,29 +24,21 @@ class DonorController extends Controller
             'description' => 'nullable|string',
         ]);
 
-        // Create donor
         $donor = Donor::create($validated);
 
         return response()->json([
-            'message' => 'Thank you so much for supporting me,good luck all the time',
-            'data' => $donor,
+            'message' => 'Thank you so much for supporting us. Good luck all the time!',
+            'data' => new DonorResource($donor),
         ], 201);
     }
 
-    /**
-     * Display the specified resource.
-     */
     public function show(Donor $donor)
     {
-        return response()->json($donor);
+        return new DonorResource($donor);
     }
 
-    /**
-     * Update the specified resource in storage.
-     */
     public function update(Request $request, Donor $donor)
     {
-        // Validate input
         $validated = $request->validate([
             'name' => 'sometimes|required|string|max:255',
             'email' => 'sometimes|required|email',
@@ -62,18 +47,14 @@ class DonorController extends Controller
             'description' => 'nullable|string',
         ]);
 
-        // Update donor
         $donor->update($validated);
 
         return response()->json([
             'message' => 'Donor updated successfully.',
-            'data' => $donor,
+            'data' => new DonorResource($donor),
         ]);
     }
 
-    /**
-     * Remove the specified resource from storage.
-     */
     public function destroy(Donor $donor)
     {
         $donor->delete();
