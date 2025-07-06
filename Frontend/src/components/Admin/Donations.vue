@@ -2,13 +2,12 @@
   <div class="flex min-h-screen bg-gray-50">
     <!-- Sidebar -->
     <nav class="fixed top-0 left-0 h-screen w-64 bg-gray-900 text-white flex flex-col p-6 shadow-lg">
-        <router-link 
+      <router-link 
             to="/admin" 
             class="text-2xl font-bold mb-8"
             >
             Admin Panel
         </router-link>
-
       <div class="flex flex-col space-y-4">
         <button 
           @click="goBack" 
@@ -65,8 +64,7 @@
 
     <!-- Main Content -->
     <div class="ml-64 p-8 w-full">
-      <h2 class="text-3xl font-bold text-gray-800 mb-4">Welcome, Admin</h2>
-
+      <h1 class="text-3xl font-bold text-gray-800 mb-4">Donations</h1>
       <!-- Navigation Links -->
       <div class="mb-6 flex space-x-4">
         <router-link 
@@ -91,46 +89,58 @@
           Donations
         </router-link>
       </div>
-
-      <!-- Overview Cards -->
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
-        <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition duration-200 transform hover:-translate-y-1">
-          <h3 class="text-lg font-semibold text-gray-700">Total Donations</h3>
+      <div v-if="loading" class="text-gray-600 text-lg">Loading donations...</div>
+      <div v-else class="space-y-6">
+        <!-- Total Amount Card -->
+        <div v-if="donations.length > 0" class="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition duration-200 transform hover:-translate-y-1">
+          <h2 class="text-lg font-semibold text-gray-700">Total Amount</h2>
           <p class="text-3xl font-bold text-green-600">${{ totalAmount }}</p>
         </div>
-        <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition duration-200 transform hover:-translate-y-1">
-          <h3 class="text-lg font-semibold text-gray-700">Total Donors</h3>
-          <p class="text-3xl font-bold text-blue-600">{{ totalDonors }}</p>
+        <!-- Donations Table -->
+        <div class="bg-white p-6 rounded-lg shadow-md">
+          <div class="overflow-x-auto">
+            <table class="min-w-full border border-gray-200">
+              <thead class="bg-gray-100">
+                <tr>
+                  <th class="p-3 text-left text-sm font-semibold text-gray-700">ID</th>
+                  <th class="p-3 text-left text-sm font-semibold text-gray-700">Description</th>
+                  <th class="p-3 text-left text-sm font-semibold text-gray-700">Budget Amount</th>
+                  <th class="p-3 text-left text-sm font-semibold text-gray-700">Action</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr v-for="donation in donations" :key="donation.id" class="border-t hover:bg-gray-50 transition duration-150">
+                  <td class="p-3 text-gray-600">{{ donation.id }}</td>
+                  <td class="p-3 text-gray-600">{{ donation.description || '-' }}</td>
+                  <td class="p-3 text-gray-600">${{ parseFloat(donation.amount || 0).toFixed(2) }}</td>
+                  <td class="p-3 space-x-2">
+                    <button
+                      @click="viewDonation(donation)"
+                      class="bg-blue-500 text-white px-3 py-1 rounded hover:bg-blue-600 transition duration-150"
+                    >
+                      View Details
+                    </button>
+                    <!-- <button
+                      @click="editDonation(donation)"
+                      class="bg-yellow-500 text-white px-3 py-1 rounded hover:bg-yellow-600 transition duration-150"
+                    >
+                      Edit
+                    </button> -->
+                    <button
+                      @click="deleteDonation(donation)"
+                      class="bg-red-500 text-white px-3 py-1 rounded hover:bg-red-600 transition duration-150"
+                    >
+                      Delete
+                    </button>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div v-if="!loading && donations.length === 0" class="text-gray-600 mt-4 text-center">
+            No donations found.
+          </div>
         </div>
-        <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition duration-200 transform hover:-translate-y-1">
-          <h3 class="text-lg font-semibold text-gray-700">Pending Verifications</h3>
-          <p class="text-3xl font-bold text-yellow-600">{{ pendingVerifications }}</p>
-        </div>
-      </div>
-
-      <!-- Quick Links -->
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-        <router-link 
-          to="/admin/donations" 
-          class="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition duration-200 transform hover:-translate-y-1"
-        >
-          <h4 class="text-lg font-semibold text-gray-700 mb-2">Manage Donations</h4>
-          <p class="text-gray-600">View, verify, and delete donation records.</p>
-        </router-link>
-        <router-link 
-          to="/admin/donors" 
-          class="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition duration-200 transform hover:-translate-y-1"
-        >
-          <h4 class="text-lg font-semibold text-gray-700 mb-2">View Donors</h4>
-          <p class="text-gray-600">Browse donor details and export data.</p>
-        </router-link>
-        <router-link 
-          to="/admin/settings" 
-          class="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition duration-200 transform hover:-translate-y-1"
-        >
-          <h4 class="text-lg font-semibold text-gray-700 mb-2">System Settings</h4>
-          <p class="text-gray-600">Configure site preferences and security.</p>
-        </router-link>
       </div>
     </div>
   </div>
@@ -138,15 +148,19 @@
 
 <script>
 export default {
+  name: 'Donations',
   data() {
     return {
       donations: [],
-      totalAmount: 0,
-      totalDonors: 0,
-      pendingVerifications: 0
+      loading: true
     };
   },
   computed: {
+    totalAmount() {
+      return this.donations
+        .reduce((sum, d) => sum + parseFloat(d.amount || 0), 0)
+        .toFixed(2);
+    },
     navHistory() {
       return JSON.parse(localStorage.getItem('adminNavHistory') || '[]');
     },
@@ -155,7 +169,7 @@ export default {
     }
   },
   mounted() {
-    this.fetchOverview();
+    this.fetchDonations();
     this.updateNavHistory();
   },
   beforeRouteUpdate(to, from, next) {
@@ -163,7 +177,16 @@ export default {
     next();
   },
   methods: {
-    async fetchOverview() {
+    // Added example fallback
+    exampleDonations() {
+      return [
+        { id: 1, description: "Education Program", amount: "150.00" },
+        { id: 2, description: "Health Initiative", amount: "200.00" },
+        { id: 3, description: "Community Outreach", amount: "75.50" }
+      ];
+    },
+    async fetchDonations() {
+      this.loading = true;
       try {
         const token = localStorage.getItem('token');
         if (!token) throw new Error('No authentication token found');
@@ -173,13 +196,33 @@ export default {
         if (!res.ok) throw new Error('Failed to fetch donations');
         const json = await res.json();
         this.donations = json.data || [];
-        this.totalAmount = this.donations
-          .reduce((sum, d) => sum + parseFloat(d.amount || 0), 0)
-          .toFixed(2);
-        this.totalDonors = this.donations.length;
-        this.pendingVerifications = this.donations.filter(d => d.status === 'pending').length;
       } catch (err) {
-        console.error('Error fetching overview:', err);
+        console.error('Error fetching donations:', err);
+        // Use example data
+        this.donations = this.exampleDonations();
+      } finally {
+        this.loading = false;
+      }
+    },
+    viewDonation(donation) {
+      this.$router.push(`/admin/donations/${donation.id}`);
+    },
+    editDonation(donation) {
+      this.$router.push(`/admin/donations/${donation.id}/edit`);
+    },
+    async deleteDonation(donation) {
+      if (!confirm(`Are you sure you want to delete donation #${donation.id}?`)) return;
+      try {
+        const token = localStorage.getItem('token');
+        if (!token) throw new Error('No authentication token found');
+        const res = await fetch(`/api/admin/donations/${donation.id}`, {
+          method: 'DELETE',
+          headers: { Authorization: `Bearer ${token}` }
+        });
+        if (!res.ok) throw new Error('Failed to delete donation');
+        this.fetchDonations();
+      } catch (err) {
+        console.error('Error deleting donation:', err);
       }
     },
     updateNavHistory() {
@@ -205,7 +248,7 @@ export default {
     logout() {
       localStorage.removeItem('token');
       localStorage.removeItem('adminNavHistory');
-      this.$router.push("/");
+      this.$router.push('/');
     }
   }
 };

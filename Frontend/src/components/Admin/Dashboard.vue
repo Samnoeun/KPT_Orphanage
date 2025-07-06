@@ -2,13 +2,12 @@
   <div class="flex min-h-screen bg-gray-50">
     <!-- Sidebar -->
     <nav class="fixed top-0 left-0 h-screen w-64 bg-gray-900 text-white flex flex-col p-6 shadow-lg">
-        <router-link 
+      <router-link 
             to="/admin" 
             class="text-2xl font-bold mb-8"
             >
             Admin Panel
         </router-link>
-
       <div class="flex flex-col space-y-4">
         <button 
           @click="goBack" 
@@ -66,7 +65,6 @@
     <!-- Main Content -->
     <div class="ml-64 p-8 w-full">
       <h2 class="text-3xl font-bold text-gray-800 mb-4">Welcome, Admin</h2>
-
       <!-- Navigation Links -->
       <div class="mb-6 flex space-x-4">
         <router-link 
@@ -91,7 +89,6 @@
           Donations
         </router-link>
       </div>
-
       <!-- Overview Cards -->
       <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
         <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition duration-200 transform hover:-translate-y-1">
@@ -107,7 +104,6 @@
           <p class="text-3xl font-bold text-yellow-600">{{ pendingVerifications }}</p>
         </div>
       </div>
-
       <!-- Quick Links -->
       <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
         <router-link 
@@ -143,7 +139,8 @@ export default {
       donations: [],
       totalAmount: 0,
       totalDonors: 0,
-      pendingVerifications: 0
+      pendingVerifications: 0,
+      loading: false
     };
   },
   computed: {
@@ -164,6 +161,7 @@ export default {
   },
   methods: {
     async fetchOverview() {
+      this.loading = true;
       try {
         const token = localStorage.getItem('token');
         if (!token) throw new Error('No authentication token found');
@@ -180,6 +178,8 @@ export default {
         this.pendingVerifications = this.donations.filter(d => d.status === 'pending').length;
       } catch (err) {
         console.error('Error fetching overview:', err);
+      } finally {
+        this.loading = false;
       }
     },
     updateNavHistory() {
@@ -205,7 +205,7 @@ export default {
     logout() {
       localStorage.removeItem('token');
       localStorage.removeItem('adminNavHistory');
-      this.$router.push("/");
+      this.$router.push('/');
     }
   }
 };
