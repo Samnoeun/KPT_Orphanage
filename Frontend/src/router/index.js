@@ -53,6 +53,10 @@ const routes = [
       {
         path: 'donations',
         component: () => import('@/components/Admin/Donations.vue')
+      },
+      {
+        path: 'staffs',
+        component: () => import('@/components/Admin/Staffs.vue')
       }
     ]
   }
