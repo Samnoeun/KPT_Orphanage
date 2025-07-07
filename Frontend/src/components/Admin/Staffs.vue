@@ -7,10 +7,43 @@
     <div class="ml-64 p-8 w-full">
       <h2 class="text-3xl font-bold text-gray-800 mb-4">Staff Management</h2>
       
-      <!-- Header with Total Staff and Add Button -->
+      <!-- Quick Links -->
+      <div class="mb-6 flex space-x-4">
+        <router-link 
+          to="/admin/dashboard" 
+          class="text-blue-600 hover:text-blue-800 font-semibold transition duration-150"
+          active-class="text-blue-800 underline"
+        >
+          Dashboard
+        </router-link>
+        <router-link 
+          to="/admin/donors" 
+          class="text-blue-600 hover:text-blue-800 font-semibold transition duration-150"
+          active-class="text-blue-800 underline"
+        >
+          Donors
+        </router-link>
+        <router-link 
+          to="/admin/donations" 
+          class="text-blue-600 hover:text-blue-800 font-semibold transition duration-150"
+          active-class="text-blue-800 underline"
+        >
+          Donations
+        </router-link>
+        <router-link 
+          to="/admin/staffs" 
+          class="text-blue-600 hover:text-blue-800 font-semibold transition duration-150"
+          active-class="text-blue-800 underline"
+        >
+          Staff
+        </router-link>
+      </div>
+
+      <!-- Total Staff Card -->
       <div class="mb-6 flex justify-between items-center">
-        <div class="text-lg font-semibold text-gray-700">
-          Total Staff: <span class="text-purple-600">{{ totalStaff }}</span>
+        <div v-if="staffList.length > 0" class="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition duration-200 transform hover:-translate-y-1">
+          <h3 class="text-lg font-semibold text-gray-700 mb-2">Total Staff</h3>
+          <p class="text-3xl font-bold text-green-600">{{ totalStaff }}</p>
         </div>
         <button 
           @click="openAddModal"
@@ -122,9 +155,9 @@
                 <option value="" disabled>Select a position</option>
                 <option value="Administrator">Administrator</option>
                 <option value="Manager">Manager</option>
-                <option value="Coordinator">Coordinator</option>
-                <option value="Analyst">Analyst</option>
-                <option value="Support Staff">Support Staff</option>
+                <option value="Chemistry Teacher">Chemistry Teacher</option>
+                <option value="English Teacher">English Teacher</option>
+                <option value="Khmer Teacher">Khmer Teacher</option>
                 <option value="Other">Other</option>
               </select>
               <p v-if="errors.position" class="text-red-500 text-sm mt-1">{{ errors.position }}</p>
