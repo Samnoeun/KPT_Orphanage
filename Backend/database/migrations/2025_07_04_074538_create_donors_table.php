@@ -15,7 +15,6 @@ return new class extends Migration
             $table->id();
             $table->string('name');
             $table->string('email');
-            $table->string('bankName');
             $table->decimal('amount', 10, 2);
             $table->string('Description');
             $table->timestamps();
