@@ -13,7 +13,7 @@
       <!-- Overlay Content -->
       <div class="absolute inset-0 flex flex-col items-center justify-center z-20 text-center"
         style="background: rgba(0,0,0,0.35);">
-        <h1 class="text-4xl md:text-6xl font-extrabold text-white drop-shadow-lg mb-4 animate-fadein">
+        <h1 class="text-4xl md:text-6xl font-extrabold text-orange-600  drop-shadow-lg mb-4 animate-fadein">
           Contact Us
         </h1>
         <p class="text-lg md:text-2xl text-white/90 mb-6 max-w-2xl animate-fadein delay-200">
@@ -237,7 +237,7 @@ const setSlide = (index) => {
   animation-delay: 0.2s;
 }
 .animate-fadein.delay-400 {
-  animation-delay: 0.4s;
+  animation-delay: 1s;
 }
 @keyframes fadein {
   from {

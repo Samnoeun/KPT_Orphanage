@@ -76,10 +76,7 @@
                 <input type="number" min="0" placeholder="Custom" v-model.number="amount"
                   class="border rounded px-2 py-1 w-28 text-center" />
               </div>
-              <div>
-                <!-- Replace with your QR code image/source -->
-                <img src="../assets/image/photo_2024-07-17_09-25-07.jpg" alt="QR Code" class="h-2=40 w-40 rounded" />
-              </div>
+              
             </div>
           </div>
 

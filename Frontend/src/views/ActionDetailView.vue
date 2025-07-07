@@ -29,60 +29,52 @@
 </template>
 
 <script setup>
-import { computed } from 'vue'
-import { useRoute, useRouter } from 'vue-router'
-import { Icon } from '@iconify/vue'
+const express = require('express')
+const nodemailer = require('nodemailer')
+const cors = require('cors')
+const bodyParser = require('body-parser')
 
-const route = useRoute()
-const router = useRouter()
-const topic = route.params.topic
+const app = express()
+app.use(cors())
+app.use(bodyParser.json())
 
-const data = {
-  education: {
-    title: 'Education Program Details',
-    description: 'Subjects we provide for a brighter future:',
-    subjects: [
-      { name: 'Math', description: 'Learn to solve problems and think logically.', icon: 'mdi:calculator' },
-      { name: 'English', description: 'Improve communication and language skills.', icon: 'mdi:book-open-page-variant' },
-      { name: 'Physics', description: 'Explore motion, forces, and the laws of nature.', icon: 'mdi:atom' },
-      { name: 'Chemistry', description: 'Discover substances and their interactions.', icon: 'mdi:flask-outline' },
-      { name: 'Biology', description: 'Understand life from cells to ecosystems.', icon: 'mdi:dna' },
-      { name: 'Khmer', description: 'Preserve and develop Khmer literacy and culture.', icon: 'mdi:translate' },
-      { name: 'Computer', description: 'Learn computer skills and digital literacy for the future.', icon: 'mdi:monitor' }
-    ]
-  },
-  healthcare: {
-    title: 'Healthcare Outreach Details',
-    description: 'Here’s what we provide to improve community health:',
-    subjects: [
-      { name: 'Checkups', description: 'Routine checkups and screenings for all ages.', icon: 'mdi:stethoscope' },
-      { name: 'Vaccinations', description: 'Essential vaccines and immunization awareness.', icon: 'mdi:syringe' },
-      { name: 'First Aid Training', description: 'Basic emergency response for families.', icon: 'mdi:medical-bag' },
-      { name: 'Nutrition Programs', description: 'Promoting healthy eating and habits.', icon: 'mdi:food-apple-outline' }
-    ]
-  },
-  cultural: {
-    title: 'Cultural Event Details',
-    description: 'Programs that celebrate and preserve our traditions:',
-    subjects: [
-      { name: 'Traditional Dance', description: 'Learn and perform classical Khmer dances.', icon: 'mdi:gesture-tap' },
-      { name: 'Folk Music', description: 'Enjoy and participate in cultural music.', icon: 'mdi:music-note' },
-      { name: 'Festivals', description: 'Celebrate Khmer New Year and other events.', icon: 'mdi:party-popper' },
-      { name: 'Art Workshops', description: 'Crafts, costumes, and heritage art classes.', icon: 'mdi:palette' }
-    ]
+app.post('/send-donation', async (req, res) => {
+  const { name, email, amount, message } = req.body
+
+  const transporter = nodemailer.createTransport({
+    service: 'gmail',
+    auth: {
+      user: 'chobunny22@gmail.com', // <-- Change this to your Gmail
+      pass: 'wvpv gmnq mkcd fqbm'    // <-- Generate from Google App Passwords
+    }
+  })
+
+  const mailOptions = {
+    from: email,
+    to: 'chobunny22@gmail.com',
+    subject: 'New Donation Received',
+    html: `
+      <h2>🎉 New Donation Submission</h2>
+      <p><strong>Name:</strong> ${name}</p>
+      <p><strong>Email:</strong> ${email}</p>
+      <p><strong>Amount:</strong> $${amount}</p>
+      <p><strong>Message:</strong> ${message || '(none)'}</p>
+    `
   }
-}
 
-const programData = computed(() => data[topic] || {
-  title: 'Program Not Found',
-  description: 'Sorry, we couldn’t find that program.',
-  subjects: []
+  try {
+    await transporter.sendMail(mailOptions)
+    res.status(200).send('Email sent')
+  } catch (error) {
+    console.error('Error sending email:', error)
+    res.status(500).send('Error sending email')
+  }
 })
 
-function goToSubjectDetail(subjectName) {
-  // Example: navigate to route named 'ActionDetail' with subject param
-  router.push({ name: 'ActionDetail', params: { subject: subjectName.toLowerCase() } })
-}
+app.listen(3000, () => {
+  console.log('✅ Server running at http://localhost:3000')
+})
+
 </script>
 
 <style scoped>
