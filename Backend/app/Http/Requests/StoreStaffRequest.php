@@ -24,7 +24,9 @@ class StoreStaffRequest extends FormRequest
         return [
             'name' => 'required|string|max:255',
             'email' => 'required|email|unique:staff,email',
-            'position' => 'required|string|max:100',
+            'description' => 'nullable|string',
+            'position' => 'nullable|string|max:100',
+            'profile' => 'nullable|image|mimes:jpg,jpeg,png|max:2048', // 2MB max
         ];
     }
 }
