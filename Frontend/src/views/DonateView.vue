@@ -30,50 +30,48 @@
         Donation Information
       </h2>
 
-      <div class="bg-white rounded-xl shadow-xl border border-gray-200 p-8">
-        <div class="flex items-start mb-6">
-          <div class="flex-shrink-0 mt-1">
-            <i class="fas fa-info-circle text-blue-600 text-3xl"></i>
-          </div>
-          <div class="ml-4">
-            <h3 class="text-2xl font-semibold text-gray-800 mb-2">Why We Collect Donor Information</h3>
-            <p class="text-gray-700 leading-relaxed">
-              To ensure <span class="font-medium text-blue-600">transparency and accountability</span>, your donor
-              information helps us:
-            </p>
-          </div>
-        </div>
+      <div class="bg-white rounded-2xl shadow-lg border border-gray-100 p-6 sm:p-10">
+  <div class="flex items-center mb-8">
+    <div class="flex-shrink-0">
+      <i class="fas fa-info-circle text-teal-500 text-3xl sm:text-4xl"></i>
+    </div>
+    <div class="ml-5">
+      <h3 class="text-2xl sm:text-3xl font-bold text-gray-900 mb-3">Why We Collect Donor Information</h3>
+      <p class="text-gray-600 text-base sm:text-lg leading-relaxed">
+        To ensure <span class="font-semibold text-teal-600">transparency and accountability</span>, your donor
+        information helps us:
+      </p>
+    </div>
+  </div>
 
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
-          <!-- Card Item -->
-          <div class="bg-blue-50 p-4 rounded-lg border border-blue-200 shadow-sm hover:shadow-md transition">
-            <p class="text-blue-800 font-semibold">📄 Provide official receipts</p>
-            <p class="text-sm text-gray-600">So you can track and report your donations easily.</p>
-          </div>
+  <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+    <div class="bg-gradient-to-br from-teal-50 to-blue-50 p-5 rounded-xl border border-teal-100 shadow-sm hover:shadow-xl transition-transform duration-300 transform hover:scale-105">
+      <p class="text-teal-800 font-semibold text-lg">📄 Official Receipts</p>
+      <p class="text-gray-600 text-sm mt-2">Track and report your donations effortlessly.</p>
+    </div>
 
-          <div class="bg-blue-50 p-4 rounded-lg border border-blue-200 shadow-sm hover:shadow-md transition">
-            <p class="text-blue-800 font-semibold">📬 Keep you updated</p>
-            <p class="text-sm text-gray-600">You’ll receive impact reports about how your donation helps.</p>
-          </div>
+    <div class="bg-gradient-to-br from-teal-50 to-blue-50 p-5 rounded-xl border border-teal-100 shadow-sm hover:shadow-xl transition-transform duration-300 transform hover:scale-105">
+      <p class="text-teal-800 font-semibold text-lg">📬 Stay Informed</p>
+      <p class="text-gray-600 text-sm mt-2">Receive updates on how your donation makes an impact.</p>
+    </div>
 
-          <div class="bg-blue-50 p-4 rounded-lg border border-blue-200 shadow-sm hover:shadow-md transition">
-            <p class="text-blue-800 font-semibold">📑 Fulfill legal/tax requirements</p>
-            <p class="text-sm text-gray-600">Your information helps us comply with Cambodian laws and audits.</p>
-          </div>
+    <div class="bg-gradient-to-br from-teal-50 to-blue-50 p-5 rounded-xl border border-teal-100 shadow-sm hover:shadow-xl transition-transform duration-300 transform hover:scale-105">
+      <p class="text-teal-800 font-semibold text-lg">📑 Legal Compliance</p>
+      <p class="text-gray-600 text-sm mt-2">Helps us meet Cambodian legal and audit standards.</p>
+    </div>
 
-          <div class="bg-blue-50 p-4 rounded-lg border border-blue-200 shadow-sm hover:shadow-md transition">
-            <p class="text-blue-800 font-semibold">🙏 Recognize your generosity</p>
-            <p class="text-sm text-gray-600">So we can thank you and show our appreciation.</p>
-          </div>
-        </div>
-
-      </div>
+    <div class="bg-gradient-to-br from-teal-50 to-blue-50 p-5 rounded-xl border border-teal-100 shadow-sm hover:shadow-xl transition-transform duration-300 transform hover:scale-105">
+      <p class="text-teal-800 font-semibold text-lg">🙏 Show Appreciation</p>
+      <p class="text-gray-600 text-sm mt-2">Allows us to thank you for your generous support.</p>
+    </div>
+  </div>
+</div>
 
 
 
       <div class="bg-white rounded-xl shadow-xl border border-gray-200 p-8">
         <h2 class="text-4xl font-extrabold text-center text-gray-900 mb-10">
-          Donation 
+          Donation
         </h2>
         <div class="max-w-[90rem] mx-auto p-6 grid grid-cols-1 md:grid-cols-2 gap-8">
           <div class="flex flex-col items-center md:items-start text-center md:text-left space-y-4">
@@ -96,7 +94,6 @@
                     <input type="number" min="0" placeholder="Custom" v-model.number="amount"
                       class="border rounded px-2 py-1 w-28 text-center" />
                   </div>
-
                 </div>
               </div>
 
