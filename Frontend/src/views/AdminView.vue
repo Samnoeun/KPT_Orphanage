@@ -102,10 +102,10 @@
           <h3 class="text-lg font-semibold text-gray-700">Total Donors</h3>
           <p class="text-3xl font-bold text-blue-600">{{ totalDonors }}</p>
         </div>
-        <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition duration-200 transform hover:-translate-y-1">
+        <!-- <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition duration-200 transform hover:-translate-y-1">
           <h3 class="text-lg font-semibold text-gray-700">Pending Verifications</h3>
           <p class="text-3xl font-bold text-yellow-600">{{ pendingVerifications }}</p>
-        </div>
+        </div> -->
       </div>
 
       <!-- Quick Links -->
