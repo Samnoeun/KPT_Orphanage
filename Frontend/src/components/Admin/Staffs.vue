@@ -24,13 +24,6 @@
           Donors
         </router-link>
         <router-link 
-          to="/admin/donations" 
-          class="text-blue-600 hover:text-blue-800 font-semibold transition duration-150"
-          active-class="text-blue-800 underline"
-        >
-          Donations
-        </router-link>
-        <router-link 
           to="/admin/staffs" 
           class="text-blue-600 hover:text-blue-800 font-semibold transition duration-150"
           active-class="text-blue-800 underline"
