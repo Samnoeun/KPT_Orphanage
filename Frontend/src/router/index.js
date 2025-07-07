@@ -7,6 +7,7 @@ import AboutView from '@/views/AboutView.vue';
 import ContactView from '@/views/ContactView.vue';
 import DonateView from '@/views/DonateView.vue';
 import ActionDetailView from "@/views/ActionDetailView.vue";
+import AboutKPTDetailView from '@/views/AboutKPTDetailView.vue';
 // import PrivacyPolicy from '@/components/PrivacyPolicy.vue';
 
 // Admin layouts & pages
@@ -24,12 +25,8 @@ const routes = [
       { path: 'contact', component: ContactView },
       { path: 'donate', component: DonateView },
       // { path: 'privacy', component: PrivacyPolicy },
-      { 
-        path: 'about/program/:topic',
-        name: 'ProgramDetail',
-        component: ActionDetailView,
-        props: true
-      },
+      { path: 'about/program/:topic', name: 'ProgramDetail', component: ActionDetailView, props: true },
+      { path: 'about/orphanage', name: 'KampongThomOrphanage', component: AboutKPTDetailView, props: true },
     ]
   },
   // Admin area (NO navbar/footer)

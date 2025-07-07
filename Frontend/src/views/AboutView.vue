@@ -37,9 +37,12 @@
             class="text-base sm:text-lg md:text-xl text-white mb-8 leading-relaxed max-w-3xl mx-auto drop-shadow opacity-0 animate-fadeInUp"
           >A place of compassion and opportunity, dedicated to providing a safe home, quality education, and a brighter future for children in need.</p>
 
-          <button
-            class="bg-yellow-400 hover:bg-yellow-500 text-black px-8 py-3 text-lg font-semibold rounded-full shadow-lg hover:shadow-xl transition-all duration-300 opacity-0 animate-fadeInUp"
-          >Learn More</button>
+          <router-link
+            to="about/orphanage"
+            class="inline-block bg-yellow-400 hover:bg-yellow-500 text-black px-8 py-3 text-lg font-semibold rounded-full shadow-lg hover:shadow-xl transition-all duration-300 opacity-0 animate-fadeInUp"
+          >
+            Learn More
+          </router-link>
         </div>
       </div>
     </section>
@@ -79,7 +82,7 @@
             <span
               class="text-blue-500 hover:text-blue-600 cursor-pointer transition-colors"
             >community-based</span>,
-            founded in 2010, operating in Kampong Thom province, Cambodia. We unlock the potential of
+            founded in 2002, operating in Kampong Thom province, Cambodia. We unlock the potential of
             underprivileged communities by empowering them with
             <span
               class="text-blue-500 hover:text-blue-600 cursor-pointer transition-colors"
