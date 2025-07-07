@@ -39,7 +39,7 @@ const topic = route.params.topic
 
 const data = {
   education: {
-    title: 'Education Program Details',
+    title: 'Education Program',
     description: 'Subjects we provide for a brighter future:',
     subjects: [
       { name: 'Math', description: 'Learn to solve problems and think logically.', icon: 'mdi:calculator' },
@@ -52,7 +52,7 @@ const data = {
     ]
   },
   healthcare: {
-    title: 'Healthcare Outreach Details',
+    title: 'Healthcare Outreach',
     description: 'Here’s what we provide to improve community health:',
     subjects: [
       { name: 'Checkups', description: 'Routine checkups and screenings for all ages.', icon: 'mdi:stethoscope' },
@@ -62,7 +62,7 @@ const data = {
     ]
   },
   cultural: {
-    title: 'Cultural Event Details',
+    title: 'Cultural Event',
     description: 'Programs that celebrate and preserve our traditions:',
     subjects: [
       { name: 'Traditional Dance', description: 'Learn and perform classical Khmer dances.', icon: 'mdi:gesture-tap' },
