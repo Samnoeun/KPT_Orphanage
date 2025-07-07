@@ -30,16 +30,19 @@
           <h1
             class="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold mb-6 leading-tight text-white drop-shadow-md opacity-0 animate-fadeInUp"
           >
-            <span class="text-yellow-300 block">Kompong Thom Orphanage</span>
+            <span class="text-yellow-300 block">Kampong Thom Orphanage</span>
           </h1>
 
           <p
             class="text-base sm:text-lg md:text-xl text-white mb-8 leading-relaxed max-w-3xl mx-auto drop-shadow opacity-0 animate-fadeInUp"
           >A place of compassion and opportunity, dedicated to providing a safe home, quality education, and a brighter future for children in need.</p>
 
-          <button
-            class="bg-yellow-400 hover:bg-yellow-500 text-black px-8 py-3 text-lg font-semibold rounded-full shadow-lg hover:shadow-xl transition-all duration-300 opacity-0 animate-fadeInUp"
-          >Learn More</button>
+          <router-link
+            to="about/orphanage"
+            class="inline-block bg-yellow-400 hover:bg-yellow-500 text-black px-8 py-3 text-lg font-semibold rounded-full shadow-lg hover:shadow-xl transition-all duration-300 opacity-0 animate-fadeInUp"
+          >
+            Learn More
+          </router-link>
         </div>
       </div>
     </section>
@@ -73,13 +76,13 @@
 
           <h1
             class="text-3xl sm:text-4xl md:text-5xl font-extrabold text-gray-800 mb-8 leading-tight"
-          >Boreykomar Kompong Thom</h1>
+          >Boreykomar Kampong Thom</h1>
           <p class="text-lg md:text-xl text-gray-700 leading-relaxed max-w-3xl mx-auto">
-            Boreykomar Kompong Thom (BKT) is a
+            Boreykomar Kampong Thom (BKT) is a
             <span
               class="text-blue-500 hover:text-blue-600 cursor-pointer transition-colors"
             >community-based</span>,
-            founded in 2010, operating in Kompong Thom province, Cambodia. We unlock the potential of
+            founded in 2002, operating in Kampong Thom province, Cambodia. We unlock the potential of
             underprivileged communities by empowering them with
             <span
               class="text-blue-500 hover:text-blue-600 cursor-pointer transition-colors"
@@ -96,8 +99,8 @@
             <div class="text-left">
               <h2 class="text-2xl md:text-3xl font-extrabold text-gray-800 mb-6">Who We Are</h2>
               <p class="text-lg text-gray-600 mb-6 leading-relaxed">
-                Boreykomar Kompong Thom Organization is a dedicated community-based organization
-                committed to the sustainable development and cultural preservation of Kompong Thom
+                Boreykomar Kampong Thom Organization is a dedicated community-based organization
+                committed to the sustainable development and cultural preservation of Kampong Thom
                 province in Cambodia. Founded with a vision to bridge traditional values with
                 modern progress, we work tirelessly to improve the lives of local communities.
               </p>
@@ -429,7 +432,7 @@
           <h2 class="text-2xl md:text-3xl font-extrabold mb-6">Join Our Mission</h2>
           <p
             class="text-lg mb-8 opacity-90 text-center"
-          >Together, we can build a stronger, more prosperous future for Kompong Thom province</p>
+          >Together, we can build a stronger, more prosperous future for Kampong Thom province</p>
           <div class="flex flex-col sm:flex-row gap-4 justify-center">
             <a
               href="/contact"
