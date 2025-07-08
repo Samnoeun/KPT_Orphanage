@@ -1,172 +1,366 @@
 <template>
   <div>
+    <!-- Hero Section -->
     <section class="relative h-screen flex items-center justify-center overflow-hidden">
       <div class="absolute inset-0 z-0">
-        <img src="../assets/image/twochildren.jpg" alt="Orphanage" class="w-full h-full object-cover" />
+        <img
+          src="https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80"
+          alt="Children" class="w-full h-full object-cover" />
         <div class="absolute inset-0 bg-gradient-to-r from-black/40 via-black/30 to-black/40"></div>
       </div>
-
       <div class="relative z-10 text-center px-4 max-w-4xl mx-auto">
         <div class="animate-fade-in-up">
           <h1 class="text-5xl md:text-7xl font-bold text-white mb-6 leading-tight">
-            <!-- Donate Now -->
             <span class="block text-yellow-400 mt-2">Your donation changes lives forever.</span>
           </h1>
-          <p class="text-xl md:text-1xl text-gray-200 mb-8 max-w-1xl mx-auto">
+          <p class="text-xl md:text-2xl text-gray-200 mb-8 max-w-3xl mx-auto">
             Every gift you give helps provide warm meals, safe shelter, quality education, and loving care to vulnerable
-            children and families in need. For many, your generosity is the difference between hunger and nourishment,
-            fear and safety, despair and hope.
-
-            When you donate, you become part of a community committed to bringing brighter futures to those who need it
-            most. Together, we can offer every child the chance to grow up healthy, educated, and loved.
-
-            Your kindness today creates lasting change and gives hope that tomorrow will be better.
+            children and families in need. Your kindness today creates lasting change and gives hope that tomorrow will
+            be better.
           </p>
         </div>
       </div>
     </section>
-    <div class="max-w-1xl mt-20 px-6">
-      <h2 class="text-4xl font-extrabold text-center text-gray-900 mb-10">
-        Donation Information
-      </h2>
 
-      <div class="bg-white rounded-2xl shadow-lg border border-gray-100 p-6 sm:p-10">
-  <div class="flex items-center mb-8">
-    <div class="flex-shrink-0">
-      <i class="fas fa-info-circle text-teal-500 text-3xl sm:text-4xl"></i>
-    </div>
-    <div class="ml-5">
-      <h3 class="text-2xl sm:text-3xl font-bold text-gray-900 mb-3">Why We Collect Donor Information</h3>
-      <p class="text-gray-600 text-base sm:text-lg leading-relaxed">
-        To ensure <span class="font-semibold text-teal-600">transparency and accountability</span>, your donor
-        information helps us:
-      </p>
-    </div>
-  </div>
+    <!-- Why We Collect Info Section -->
+    <div class="min-h-screen bg-gray-50 flex items-center justify-center py-6 px-6">
+      <!-- Main Card Container -->
+      <div class="bg-white rounded-2xl  border border-gray-200 p-8 md:p-12">
+        <div class="text-center mb-12">
+          <h1 class="text-4xl md:text-5xl font-bold text-gray-900 mb-6 leading-tight">
+            Why We Collect Donor Information
+          </h1>
+          <p class="text-gray-600 text-xl leading-relaxed max-w-4xl mx-auto">
+            To ensure <span class="font-semibold text-orange-500">transparency and accountability</span>, your donor
+            information helps us:
+          </p>
+        </div>
 
-  <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
-    <div class="bg-gradient-to-br from-teal-50 to-blue-50 p-5 rounded-xl border border-teal-100 shadow-sm hover:shadow-xl transition-transform duration-300 transform hover:scale-105">
-      <p class="text-teal-800 font-semibold text-lg">📄 Official Receipts</p>
-      <p class="text-gray-600 text-sm mt-2">Track and report your donations effortlessly.</p>
-    </div>
-
-    <div class="bg-gradient-to-br from-teal-50 to-blue-50 p-5 rounded-xl border border-teal-100 shadow-sm hover:shadow-xl transition-transform duration-300 transform hover:scale-105">
-      <p class="text-teal-800 font-semibold text-lg">📬 Stay Informed</p>
-      <p class="text-gray-600 text-sm mt-2">Receive updates on how your donation makes an impact.</p>
-    </div>
-
-    <div class="bg-gradient-to-br from-teal-50 to-blue-50 p-5 rounded-xl border border-teal-100 shadow-sm hover:shadow-xl transition-transform duration-300 transform hover:scale-105">
-      <p class="text-teal-800 font-semibold text-lg">📑 Legal Compliance</p>
-      <p class="text-gray-600 text-sm mt-2">Helps us meet Cambodian legal and audit standards.</p>
-    </div>
-
-    <div class="bg-gradient-to-br from-teal-50 to-blue-50 p-5 rounded-xl border border-teal-100 shadow-sm hover:shadow-xl transition-transform duration-300 transform hover:scale-105">
-      <p class="text-teal-800 font-semibold text-lg">🙏 Show Appreciation</p>
-      <p class="text-gray-600 text-sm mt-2">Allows us to thank you for your generous support.</p>
-    </div>
-  </div>
-</div>
-
-
-
-      <div class="bg-white rounded-xl shadow-xl border border-gray-200 p-8">
-        <h2 class="text-4xl font-extrabold text-center text-gray-900 mb-10">
-          Donation
-        </h2>
-        <div class="max-w-[90rem] mx-auto p-6 grid grid-cols-1 md:grid-cols-2 gap-8">
-          <div class="flex flex-col items-center md:items-start text-center md:text-left space-y-4">
-            <img src="../assets/image/photo_2025-07-03_10-46-38.jpg" alt="Support our cause"
-              class="rounded-lg shadow-lg w-full " />
+        <!-- Features Grid -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <!-- Official Receipts Card -->
+          <div
+            class="bg-gradient-to-br from-yellow-50 to-orange-50 rounded-xl p-6 text-center group hover:shadow-lg transition-all duration-300 border border-yellow-100">
+            <div
+              class="inline-flex items-center justify-center w-16 h-16 bg-yellow-200 rounded-full mb-6 shadow-md group-hover:shadow-lg transition-all duration-300 group-hover:scale-110">
+              <svg class="w-8 h-8 text-yellow-700" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd"
+                  d="M4 4a2 2 0 012-2h4.586A2 2 0 0112 2.586L15.414 6A2 2 0 0116 7.414V16a2 2 0 01-2 2H6a2 2 0 01-2-2V4zm2 6a1 1 0 011-1h6a1 1 0 110 2H7a1 1 0 01-1-1zm1 3a1 1 0 100 2h6a1 1 0 100-2H7z"
+                  clip-rule="evenodd" />
+              </svg>
+            </div>
+            <h3 class="text-xl font-bold text-gray-900 mb-3">Official Receipts</h3>
+            <p class="text-gray-600 text-sm leading-relaxed">
+              Track and report your donations effortlessly.
+            </p>
           </div>
-          <div class="bg-white p-8 rounded-lg shadow-lg">
-            <h1 class="text-3xl font-bold mb-4">Donate Now</h1>
-            <form @submit.prevent="handleSubmit" class="space-y-6">
-              <div class="flex flex-col gap-2">
-                <label class="block mb-2 font-semibold text-lg text-blue-600">Donation Amount</label>
 
-                <div class="flex items-center gap-4">
-                  <div class="flex gap-2 flex-wrap">
-                    <button v-for="preset in presets" :key="preset" type="button"
-                      class="px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600 transition focus:outline-none"
-                      :class="{ 'bg-blue-700': amount === preset }" @click="amount = preset">
-                      ${{ preset }}
-                    </button>
-                    <input type="number" min="0" placeholder="Custom" v-model.number="amount"
-                      class="border rounded px-2 py-1 w-28 text-center" />
+          <!-- Stay Informed Card -->
+          <div
+            class="bg-gradient-to-br from-blue-50 to-indigo-50 rounded-xl p-6 text-center group hover:shadow-lg transition-all duration-300 border border-blue-100">
+            <div
+              class="inline-flex items-center justify-center w-16 h-16 bg-blue-200 rounded-full mb-6 shadow-md group-hover:shadow-lg transition-all duration-300 group-hover:scale-110">
+              <svg class="w-8 h-8 text-blue-700" fill="currentColor" viewBox="0 0 20 20">
+                <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z" />
+                <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z" />
+              </svg>
+            </div>
+            <h3 class="text-xl font-bold text-gray-900 mb-3">Stay Informed</h3>
+            <p class="text-gray-600 text-sm leading-relaxed">
+              Receive updates on how your donation makes an impact.
+            </p>
+          </div>
+
+          <!-- Legal Compliance Card -->
+          <div
+            class="bg-gradient-to-br from-green-50 to-emerald-50 rounded-xl p-6 text-center group hover:shadow-lg transition-all duration-300 border border-green-100">
+            <div
+              class="inline-flex items-center justify-center w-16 h-16 bg-green-200 rounded-full mb-6 shadow-md group-hover:shadow-lg transition-all duration-300 group-hover:scale-110">
+              <svg class="w-8 h-8 text-green-700" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd"
+                  d="M2.166 4.999A11.954 11.954 0 0010 1.944 11.954 11.954 0 0017.834 5c.11.65.166 1.32.166 2.001 0 5.225-3.34 9.67-8 11.317C5.34 16.67 2 12.225 2 7c0-.682.057-1.35.166-2.001zm11.541 3.708a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                  clip-rule="evenodd" />
+              </svg>
+            </div>
+            <h3 class="text-xl font-bold text-gray-900 mb-3">Legal Compliance</h3>
+            <p class="text-gray-600 text-sm leading-relaxed">
+              Helps us meet Cambodian legal and audit standards.
+            </p>
+          </div>
+
+          <!-- Show Appreciation Card -->
+          <div
+            class="bg-gradient-to-br from-pink-50 to-rose-50 rounded-xl p-6 text-center group hover:shadow-lg transition-all duration-300 border border-pink-100">
+            <div
+              class="inline-flex items-center justify-center w-16 h-16 bg-pink-200 rounded-full mb-6 shadow-md group-hover:shadow-lg transition-all duration-300 group-hover:scale-110">
+              <svg class="w-8 h-8 text-pink-700" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd"
+                  d="M3.172 5.172a4 4 0 015.656 0L10 6.343l1.172-1.171a4 4 0 115.656 5.656L10 17.657l-6.828-6.829a4 4 0 010-5.656z"
+                  clip-rule="evenodd" />
+              </svg>
+            </div>
+            <h3 class="text-xl font-bold text-gray-900 mb-3">Show Appreciation</h3>
+            <p class="text-gray-600 text-sm leading-relaxed">
+              Allows us to thank you for your generous support.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Donation Form Section -->
+    <div class="bg-gray-50 py-4 px-4">
+      <div class="max-w-6xl mx-auto">
+        <!-- Progress Steps -->
+        <div class="mb-8">
+          <div class="flex items-center justify-center space-x-4 mb-4">
+            <div v-for="step in 6" :key="step" class="flex items-center">
+              <div :class="[
+                'w-10 h-10 rounded-full flex items-center justify-center font-semibold',
+                step <= 4 ? 'bg-blue-500 text-white' : 'bg-gray-300 text-gray-500'
+              ]">
+                {{ step }}
+              </div>
+              <div v-if="step < 6" :class="[
+                'w-16 h-1 mx-2',
+                step < 4 ? 'bg-blue-500' : 'bg-gray-300'
+              ]"></div>
+            </div>
+          </div>
+          <div class="text-center">
+            <span class="text-sm font-medium text-blue-600 uppercase tracking-wide">DONATION AND PAYMENT</span>
+          </div>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+          <!-- Main Form -->
+          <div class="lg:col-span-2 space-y-6">
+            <!-- Donation Details -->
+            <div class="bg-white rounded-lg shadow-sm border border-gray-200 p-6">
+              <h3 class="text-lg font-semibold text-gray-800 mb-6 uppercase tracking-wide">DONATION DETAILS</h3>
+
+              <!-- Preset Amounts -->
+              <div class="mb-6">
+                <div class="grid grid-cols-4 gap-3 mb-4">
+                  <div v-for="preset in presets" :key="preset.amount" :class="[
+                    'p-4 border-2 rounded-lg cursor-pointer text-center transition-all',
+                    amount === preset.amount ? 'border-blue-500 bg-blue-50' : 'border-gray-200 hover:border-blue-300'
+                  ]" @click="amount = preset.amount">
+                    <div class="text-2xl mb-1">{{ preset.icon }}</div>
+                    <div class="font-semibold text-gray-800">${{ preset.amount }}</div>
+                    <div class="text-xs text-gray-500">{{ preset.label }}</div>
+                  </div>
+                </div>
+
+                <!-- Custom Amount -->
+                <div class="relative">
+                  <label class="block text-sm font-medium text-gray-600 mb-2 uppercase tracking-wide">CUSTOM
+                    AMOUNT</label>
+                  <div class="relative">
+                    <span class="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-500 font-medium">$</span>
+                    <input v-model.number="amount" type="number" min="1" placeholder="Enter amount"
+                      class="w-full pl-8 pr-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:border-blue-500 bg-gray-50" />
                   </div>
                 </div>
               </div>
 
-              <div class="flex gap-4">
-                <div class="flex-1">
-                  <label class="block mb-1 font-semibold">Full Name</label>
-                  <input type="text" v-model="name"
-                    class="w-full border rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
-                    required />
-                </div>
-                <div class="flex-1">
-                  <label class="block mb-1 font-semibold">Email</label>
-                  <input type="email" v-model="email"
-                    class="w-full border rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
-                    required />
-                </div>
+              <!-- Donation Purpose -->
+              <div class="mb-6">
+                <label class="block text-sm font-medium text-gray-600 mb-2 uppercase tracking-wide">DONATION
+                  PURPOSE</label>
+                <select v-model="description" required
+                  class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:border-blue-500 bg-gray-50">
+                  <option disabled value="">Select a purpose</option>
+                  <option value="education">Education Program</option>
+                  <option value="healthcare">Healthcare Outreach</option>
+                  <option value="cultural">Cultural Event</option>
+                  <option value="emergency">Emergency Relief</option>
+                </select>
               </div>
 
-              <div class="flex gap-4">
-                <div class="flex-1">
-                  <label class="block mb-1 font-semibold text-blue-700">Donation Purpose</label>
-                  <select v-model="description"
-                    class="w-full border rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500 bg-white">
-                    <option disabled value="">Select a purpose</option>
-                    <option>Education Program</option>
-                    <option>Healthcare Outreach</option>
-                    <option>Cultural Event</option>
+              <!-- Recurring Donation -->
+              <div class="flex items-center space-x-2">
+                <input v-model="isRecurring" type="checkbox" id="recurring"
+                  class="w-4 h-4 text-blue-600 border-gray-300 rounded focus:ring-blue-500" />
+                <label for="recurring" class="text-sm text-gray-700">Make this a monthly recurring donation</label>
+              </div>
+            </div>
+
+            <!-- Donor Information -->
+            <div class="bg-white rounded-lg shadow-sm border border-gray-200 p-6">
+              <h3 class="text-lg font-semibold text-gray-800 mb-6 uppercase tracking-wide">DONOR DETAILS</h3>
+
+              <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div>
+                  <label class="block text-sm font-medium text-gray-600 mb-2 uppercase tracking-wide">NAME</label>
+                  <input v-model="name" type="text" required placeholder="Enter your full name"
+                    class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:border-blue-500 bg-gray-50" />
+                </div>
+
+                <div>
+                  <label class="block text-sm font-medium text-gray-600 mb-2 uppercase tracking-wide">EMAIL</label>
+                  <input v-model="email" type="email" required placeholder="Enter your email"
+                    class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:border-blue-500 bg-gray-50" />
+                </div>
+
+                <div>
+                  <label class="block text-sm font-medium text-gray-600 mb-2 uppercase tracking-wide">PHONE</label>
+                  <input v-model="phone" type="tel" placeholder="Enter your phone number"
+                    class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:border-blue-500 bg-gray-50" />
+                </div>
+
+                <div>
+                  <label class="block text-sm font-medium text-gray-600 mb-2 uppercase tracking-wide">COUNTRY</label>
+                  <select v-model="country"
+                    class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:border-blue-500 bg-gray-50">
+                    <option value="">Select Country</option>
+                    <option value="US">United States</option>
+                    <option value="CA">Canada</option>
+                    <option value="UK">United Kingdom</option>
+                    <option value="AU">Australia</option>
                   </select>
                 </div>
               </div>
+            </div>
+          </div>
 
-
-              <div class="flex justify-between items-center">
-                <button type="submit"
-                  class="w-full bg-green-600 text-white py-2 rounded hover:bg-green-700 transition focus:outline-none">
-                  Donate ${{ amount }}
-                </button>
+          <!-- Sidebar -->
+          <div class="space-y-4">
+            <!-- Impact Calculator -->
+            <div class="bg-white rounded-lg shadow-sm border border-gray-200">
+              <button @click="showImpact = !showImpact"
+                class="w-full px-4 py-3 text-left flex items-center justify-between text-sm font-medium text-gray-700 border-b border-gray-200">
+                Your Impact
+                <svg :class="['w-4 h-4 transition-transform', showImpact ? 'rotate-180' : '']" fill="none"
+                  stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                </svg>
+              </button>
+              <div v-if="showImpact" class="p-4 text-sm text-gray-600">
+                <div v-if="amount > 0">
+                  Your ${{ amount }} donation can:
+                  <ul class="mt-2 space-y-1 list-disc list-inside">
+                    <li>Feed {{ Math.floor(amount / 5) }} families</li>
+                    <li>Provide {{ Math.floor(amount / 10) }} school supplies</li>
+                    <li>Support {{ Math.floor(amount / 25) }} medical checkups</li>
+                  </ul>
+                </div>
+                <div v-else class="text-gray-400">
+                  Enter an amount to see your impact
+                </div>
               </div>
-            </form>
+            </div>
+
+            <!-- Donation Summary -->
+            <div class="bg-white rounded-lg shadow-sm border border-gray-200 p-4">
+              <h4 class="font-semibold text-gray-800 mb-3">DONATION SUMMARY</h4>
+              <div class="space-y-2 text-sm">
+                <div class="flex justify-between">
+                  <span>Donation Amount:</span>
+                  <span class="font-medium">${{ amount || 0 }}</span>
+                </div>
+                <div class="flex justify-between">
+                  <span>Processing Fee:</span>
+                  <span class="font-medium">$0</span>
+                </div>
+                <div class="border-t pt-2 flex justify-between font-semibold">
+                  <span>Total:</span>
+                  <span>${{ amount || 0 }}</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Submit Button -->
+            <button @click="handleSubmit" :disabled="!isFormValid" :class="[
+              'w-full py-4 px-6 rounded-lg font-semibold text-white transition-colors',
+              isFormValid ? 'bg-blue-600 hover:bg-blue-700' : 'bg-gray-400 cursor-not-allowed'
+            ]">
+              COMPLETE DONATION
+            </button>
           </div>
         </div>
       </div>
-
     </div>
-
-
-
   </div>
 </template>
 
 <script setup>
-import { ref } from 'vue'
+import { ref, computed } from 'vue'
 
-const presets = [10, 25, 50]
-const amount = ref(25)
+// Form data
+const amount = ref(0)
 const name = ref('')
 const email = ref('')
-const bankName = ref('')
+const phone = ref('')
+const country = ref('')
 const description = ref('')
+const isRecurring = ref(false)
 
-function handleSubmit() {
-  if (!amount.value || !name.value || !email.value || !bankName.value) {
-    alert('Please complete all required fields.')
-    return
+// UI state
+const showImpact = ref(false)
+
+// Features data with inline SVG icons
+const features = [
+  {
+    icon: '<path fill-rule="evenodd" d="M4 4a2 2 0 012-2h4.586A2 2 0 0112 2.586L15.414 6A2 2 0 0116 7.414V16a2 2 0 01-2 2H6a2 2 0 01-2-2V4zm2 6a1 1 0 011-1h6a1 1 0 110 2H7a1 1 0 01-1-1zm1 3a1 1 0 100 2h6a1 1 0 100-2H7z" clip-rule="evenodd" />',
+    title: 'Official Receipts',
+    description: 'Track and report your donations effortlessly.'
+  },
+  {
+    icon: '<path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z" /><path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z" />',
+    title: 'Stay Informed',
+    description: 'Receive updates on how your donation makes an impact.'
+  },
+  {
+    icon: '<path fill-rule="evenodd" d="M2.166 4.999A11.954 11.954 0 0010 1.944 11.954 11.954 0 0017.834 5c.11.65.166 1.32.166 2.001 0 5.225-3.34 9.67-8 11.317C5.34 16.67 2 12.225 2 7c0-.682.057-1.35.166-2.001zm11.541 3.708a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />',
+    title: 'Legal Compliance',
+    description: 'Helps us meet Cambodian legal and audit standards.'
+  },
+  {
+    icon: '<path fill-rule="evenodd" d="M3.172 5.172a4 4 0 015.656 0L10 6.343l1.172-1.171a4 4 0 115.656 5.656L10 17.657l-6.828-6.829a4 4 0 010-5.656z" clip-rule="evenodd" />',
+    title: 'Show Appreciation',
+    description: 'Allows us to thank you for your generous support.'
   }
-  // Process payment logic
-  console.log('Processing donation:', {
-    amount: amount.value,
-    name: name.value,
-    email: email.value,
-    bankName: bankName.value,
-    description: description.value
-  })
+]
+
+// Preset amounts
+const presets = [
+  { amount: 25, icon: '🍽️', label: 'Basic' },
+  { amount: 50, icon: '📚', label: 'Standard' },
+  { amount: 100, icon: '🏥', label: 'Premium' },
+  { amount: 250, icon: '🎓', label: 'Sponsor' }
+]
+
+// Computed
+const isFormValid = computed(() => {
+  return amount.value > 0 && name.value.trim() && email.value.trim() && description.value
+})
+
+// Methods
+const handleSubmit = () => {
+  if (isFormValid.value) {
+    const donationData = {
+      amount: amount.value,
+      name: name.value,
+      email: email.value,
+      phone: phone.value,
+      country: country.value,
+      description: description.value,
+      isRecurring: isRecurring.value
+    }
+
+    console.log('Donation submitted:', donationData)
+    alert(`Thank you ${name.value}! Your donation of $${amount.value} has been submitted.`)
+
+    // Reset form
+    amount.value = 0
+    name.value = ''
+    email.value = ''
+    phone.value = ''
+    country.value = ''
+    description.value = ''
+    isRecurring.value = false
+  }
 }
 </script>
 
@@ -185,12 +379,5 @@ function handleSubmit() {
 
 .animate-fade-in-up {
   animation: fade-in-up 1s ease-out;
-}
-
-.line-clamp-3 {
-  display: -webkit-box;
-  -webkit-line-clamp: 3;
-  -webkit-box-orient: vertical;
-  overflow: hidden;
 }
 </style>
