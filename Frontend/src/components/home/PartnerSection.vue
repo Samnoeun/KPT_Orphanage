@@ -32,24 +32,21 @@
 </template>
 
 <script setup>
-import { computed } from 'vue'
-import partner1 from '@/assets/images/partner1.jpg'
-import partner2 from '@/assets/images/partner2.jpg'
-import partner3 from '@/assets/images/partner3.jpg'
-import partner4 from '@/assets/images/partner4.jpg'
-import partner5 from '@/assets/images/partner5.jpg'
-import partner6 from '@/assets/images/partner6.jpg'
+import { ref, onMounted, computed } from 'vue'
+import axios from 'axios'
 
-const partners = [
-  { id: 1, name: 'Partner 1', logo: partner1 },
-  { id: 2, name: 'Partner 2', logo: partner2 },
-  { id: 3, name: 'Partner 3', logo: partner3 },
-  { id: 4, name: 'Partner 4', logo: partner4 },
-  { id: 5, name: 'Partner 5', logo: partner5 },
-  { id: 6, name: 'Partner 6', logo: partner6 }
-]
+const partners = ref([])
 
-const duplicatedPartners = computed(() => [...partners, ...partners])
+onMounted(async () => {
+  try {
+    const response = await axios.get('http://127.0.0.1:8000/api/partners')
+    partners.value = response.data.data
+  } catch (error) {
+    console.error('Failed to fetch partners:', error)
+  }
+})
+
+const duplicatedPartners = computed(() => [...partners.value, ...partners.value])
 </script>
 
 <style scoped>

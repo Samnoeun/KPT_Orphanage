@@ -20,9 +20,12 @@
       </div>
 
       <div class="grid lg:grid-cols-2 gap-12 items-center">
+        <!-- Dynamic image loaded from backend -->
         <div class="relative">
-          <img src="../../assets/images/students.jpg" alt="Students at orphanage"
+          <img v-if="wwdImage" :src="wwdImage" alt="Students at orphanage"
             class="rounded-2xl shadow-2xl w-full h-auto" />
+          <div v-else class="w-full h-64 bg-gray-200 animate-pulse rounded-2xl"></div>
+
           <div class="absolute -bottom-6 -right-6 bg-yellow-400 p-4 rounded-2xl shadow-lg">
             <svg class="h-8 w-8 text-black" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 14l9-5-9-5-9 5 9 5z" />
@@ -102,6 +105,21 @@
 </template>
 
 <script setup>
+import { ref, onMounted } from 'vue'
+import axios from 'axios'
+
+const wwdImage = ref('')
+
+// Fetch WWD image from backend
+onMounted(async () => {
+  try {
+    const res = await axios.get('http://localhost:8000/api/wwds')
+    const firstItem = res.data.data[0] // first WWD entry
+    wwdImage.value = firstItem.image  // already full URL
+  } catch (error) {
+    console.error('Failed to load WWD image:', error)
+  }
+})
 
 </script>
 

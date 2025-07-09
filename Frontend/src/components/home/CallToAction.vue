@@ -1,7 +1,7 @@
 <template>
-  <section class="relative py-20 overflow-hidden">
+  <section class="relative py-20 overflow-hidden" v-if="cta">
     <div class="absolute inset-0">
-      <img :src="groupImage" alt="Group photo" class="w-full h-full object-cover" />
+      <img :src="cta.image" alt="Group photo" class="w-full h-full object-cover" />
       <div class="absolute inset-0 bg-gradient-to-r from-black/70 via-black/50 to-black/70"></div>
     </div>
 
@@ -35,8 +35,19 @@
     </div>
   </section>
 </template>
-
 <script setup>
+import { ref, onMounted } from 'vue'
 import { RouterLink } from 'vue-router'
-import groupImage from '@/assets/images/group.jpg'
+import axios from 'axios'
+
+const cta = ref(null)
+
+onMounted(async () => {
+  try {
+    const response = await axios.get('http://127.0.0.1:8000/api/cta-sections')
+    cta.value = response.data.data[0] // get the first record
+  } catch (error) {
+    console.error('Failed to fetch CTA section:', error)
+  }
+})
 </script>

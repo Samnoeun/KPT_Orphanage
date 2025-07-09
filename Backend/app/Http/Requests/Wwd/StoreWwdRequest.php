@@ -4,7 +4,7 @@ namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class StudentRequest extends FormRequest
+class StoreWwdRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -21,13 +21,8 @@ class StudentRequest extends FormRequest
      */
     public function rules(): array
     {
-        $studentId = $this->route('student') ? $this->route('student')->id : null;
-
         return [
-            'name' => 'required|string|max:255',
-            // Ignore the current student's email when checking unique constraint
-            'email' => 'required|email|unique:students,email,' . $studentId,
-            'description' => 'nullable|string',
+            'image' => 'required|image|max:2048', // max 2MB, only image files
         ];
     }
 }
