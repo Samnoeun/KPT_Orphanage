@@ -5,19 +5,22 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Staff extends Model
+class Testimonial extends Model
 {
     use HasFactory;
-
     protected $fillable = [
         'name',
-        'email',
-        'description',
-        'position',
-        'profile'
+        'program',
+        'year',
+        'short_description',
+        'full_testimonial',
+        'background',
+        'current_status',
+        'future_goals',
+        'image',
     ];
     protected $hidden = [
         'created_at',
-        'updated_at'
+        'updated_at',
     ];
 }

@@ -4,14 +4,14 @@ namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class UpdateStaffRequest extends FormRequest
+class StoreImpactRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
      */
     public function authorize(): bool
     {
-        return false;
+        return true;
     }
 
     /**
@@ -21,14 +21,9 @@ class UpdateStaffRequest extends FormRequest
      */
     public function rules(): array
     {
-        $staffId = $this->route('staff')->id;
-
         return [
-            'name' => 'required|string|max:255',
-            'email' => 'required|email|unique:staff,email,' . $staffId,
-            'description' => 'nullable|string',
-            'position' => 'nullable|string|max:100',
-            'profile' => 'nullable|image|mimes:jpg,jpeg,png|max:2048',
+            'label' => 'required|string|max:255',
+            'value' => 'required|string|max:255',
         ];
     }
 }

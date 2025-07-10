@@ -25,8 +25,12 @@ const routes = [
       { path: 'contact', component: ContactView },
       { path: 'donate', component: DonateView },
       // { path: 'privacy', component: PrivacyPolicy },
-      { path: 'about/program/:topic', name: 'ProgramDetail', component: ActionDetailView, props: true },
-      { path: 'about/orphanage', name: 'KampongThomOrphanage', component: AboutKPTDetailView, props: true },
+      {
+        path: 'about/program/:topic',
+        name: 'ProgramDetail',
+        component: ActionDetailView,
+        props: true
+      },
     ]
   },
   // Admin area (NO navbar/footer)
@@ -35,7 +39,7 @@ const routes = [
     component: AdminLayout,
     children: [
       { path: '', component: AdminView }, // e.g. /admin
-      { 
+      {
         path: 'login',
         component: () => import('@/components/Admin/Login.vue')
       },

@@ -5,7 +5,7 @@ namespace App\Http\Resources;
 use Illuminate\Http\Request;
 use Illuminate\Http\Resources\Json\JsonResource;
 
-class StudentResource extends JsonResource
+class CtaSectionResource extends JsonResource
 {
     /**
      * Transform the resource into an array.
@@ -16,9 +16,7 @@ class StudentResource extends JsonResource
     {
         return [
             'id' => $this->id,
-            'name' => $this->name,
-            'email' => $this->email,
-            'description' => $this->description,
+            'image' => $this->image ? url('storage/' . $this->image) : null,
         ];
     }
 }
