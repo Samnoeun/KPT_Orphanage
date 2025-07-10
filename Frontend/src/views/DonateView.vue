@@ -4,7 +4,7 @@
     <section class="relative h-screen flex items-center justify-center overflow-hidden">
       <div class="absolute inset-0 z-0">
         <img
-          src="https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80"
+          src="../assets/image/twochildren.jpg"
           alt="Children" class="w-full h-full object-cover" />
         <div class="absolute inset-0 bg-gradient-to-r from-black/40 via-black/30 to-black/40"></div>
       </div>
@@ -174,7 +174,6 @@
                   <option value="education">Education Program</option>
                   <option value="healthcare">Healthcare Outreach</option>
                   <option value="cultural">Cultural Event</option>
-                  <option value="emergency">Emergency Relief</option>
                 </select>
               </div>
 
