@@ -1,0 +1,746 @@
+{
+	"info": {
+		"_postman_id": "9f9062c2-6550-466c-bfa0-aa5a6fcf181b",
+		"name": "KPT Orphanage",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "43647798",
+		"_collection_link": "https://samnoeunrun.postman.co/workspace/My-Workspace~d55fed25-b9e3-4773-803b-10fbb05d4e28/collection/43647798-9f9062c2-6550-466c-bfa0-aa5a6fcf181b?action=share&source=collection_link&creator=43647798"
+	},
+	"item": [
+		{
+			"name": "Home page",
+			"item": [
+				{
+					"name": "Banner",
+					"item": [
+						{
+							"name": "get banner",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{url}}/banners",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"banners"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "create banner",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "{{url}}/banners",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"banners"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "update banner",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "_method",
+											"value": "PUT",
+											"type": "text"
+										},
+										{
+											"key": "title",
+											"value": "Welcome to",
+											"type": "text"
+										},
+										{
+											"key": "description",
+											"value": "A sanctuary of hope, education, and endless possibilities for children in need",
+											"type": "text"
+										},
+										{
+											"key": "image",
+											"type": "file",
+											"src": "/C:/Users/Samnoeun.Run/Pictures/KPT_Orphanage.jpg"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{url}}/banners/3",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"banners",
+										"3"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "delete banner",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{url}}/banners",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"banners"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "TestTimonials",
+					"item": [
+						{
+							"name": "create testimonail",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "name",
+											"value": "Sokha",
+											"type": "text"
+										},
+										{
+											"key": "program",
+											"value": "Web Dev",
+											"type": "text"
+										},
+										{
+											"key": "year",
+											"value": "2025",
+											"type": "text"
+										},
+										{
+											"key": "shortDescription",
+											"value": "Top student",
+											"type": "text"
+										},
+										{
+											"key": "fullTestimonial",
+											"value": "Great journey at KPT!",
+											"type": "text"
+										},
+										{
+											"key": "background",
+											"value": "Came from orphanage",
+											"type": "text"
+										},
+										{
+											"key": "currentStatus",
+											"value": "Junior Developer",
+											"type": "text"
+										},
+										{
+											"key": "futureGoals",
+											"value": "Senior Developer",
+											"type": "text"
+										},
+										{
+											"key": "image",
+											"type": "file",
+											"src": "postman-cloud:///1f05acfd-e79f-44f0-9891-c2178ebcce20"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{url}}/testimonials",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"testimonials"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "get testimonails",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "name",
+											"value": "Sokha",
+											"type": "text"
+										},
+										{
+											"key": "program",
+											"value": "Web Dev",
+											"type": "text"
+										},
+										{
+											"key": "year",
+											"value": "2025",
+											"type": "text"
+										},
+										{
+											"key": "shortDescription",
+											"value": "Top student",
+											"type": "text"
+										},
+										{
+											"key": "fullTestimonial",
+											"value": "Great journey at KPT!",
+											"type": "text"
+										},
+										{
+											"key": "background",
+											"value": "Came from orphanage",
+											"type": "text"
+										},
+										{
+											"key": "currentStatus",
+											"value": "Junior Developer",
+											"type": "text"
+										},
+										{
+											"key": "futureGoals",
+											"value": "Senior Developer",
+											"type": "text"
+										},
+										{
+											"key": "image",
+											"type": "file",
+											"src": "postman-cloud:///1f05acfd-e79f-44f0-9891-c2178ebcce20"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{url}}/testimonials",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"testimonials"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "update testinonails",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "_method",
+											"value": "PUT",
+											"type": "text"
+										},
+										{
+											"key": "name",
+											"value": "Sokha Simm",
+											"type": "text"
+										},
+										{
+											"key": "program",
+											"value": "Web Development",
+											"type": "text"
+										},
+										{
+											"key": "year",
+											"value": "2025",
+											"type": "text"
+										},
+										{
+											"key": "short_description",
+											"value": "A passionate learner from PNC.",
+											"type": "text"
+										},
+										{
+											"key": "full_testimonial",
+											"value": "My journey at PNC...",
+											"type": "text"
+										},
+										{
+											"key": "background",
+											"value": "I come from Battambang...",
+											"type": "text"
+										},
+										{
+											"key": "current_status",
+											"value": "Currently interning at Vattanac Bank.",
+											"type": "text"
+										},
+										{
+											"key": "future_goals",
+											"value": "Senior Developer",
+											"type": "text"
+										},
+										{
+											"key": "image",
+											"type": "file",
+											"src": "/C:/Users/Samnoeun.Run/Pictures/Screenshots/Screenshot 2025-07-01 161840.png"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{url}}/testimonials/5",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"testimonials",
+										"5"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "delete testimonial",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "name",
+											"value": "Channak Kan",
+											"type": "text"
+										},
+										{
+											"key": "program",
+											"value": "Web Development",
+											"type": "text"
+										},
+										{
+											"key": "year",
+											"value": "2025",
+											"type": "text"
+										},
+										{
+											"key": "short_description",
+											"value": "A passionate learner from PNC.",
+											"type": "text"
+										},
+										{
+											"key": "full_testimonial",
+											"value": "My journey at PNC...",
+											"type": "text"
+										},
+										{
+											"key": "background",
+											"value": "I come from Battambang...",
+											"type": "text"
+										},
+										{
+											"key": "current_status",
+											"value": "Currently interning at Vattanac Bank.",
+											"type": "text"
+										},
+										{
+											"key": "future_goals",
+											"value": "Senior Developer",
+											"type": "text"
+										},
+										{
+											"key": "image",
+											"type": "file",
+											"src": "/C:/Users/Samnoeun.Run/Pictures/photo_2025-06-22_10-41-12.jpg"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{url}}/testimonials/1",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"testimonials",
+										"1"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Partner",
+					"item": [
+						{
+							"name": "get partners",
+							"request": {
+								"method": "GET",
+								"header": []
+							},
+							"response": []
+						},
+						{
+							"name": "create partner",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "{{url}}/partners",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"partners"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "update",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "{{url}}/partners",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"partners"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "CTA",
+					"item": [
+						{
+							"name": "get calltoaction",
+							"request": {
+								"method": "GET",
+								"header": []
+							},
+							"response": []
+						},
+						{
+							"name": "create calltoaction",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "image",
+											"type": "file",
+											"src": "/C:/Users/Samnoeun.Run/Pictures/Screenshots/Screenshot 2025-07-01 161840.png"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{url}}/cta-sections?",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"cta-sections"
+									],
+									"query": [
+										{
+											"key": "",
+											"value": null
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "update calltoaction",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "_method",
+											"value": "PUT"
+										},
+										{
+											"key": "image",
+											"type": "file",
+											"src": "/C:/Users/Samnoeun.Run/Pictures/partner2.jpg"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{url}}/cta-sections",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"cta-sections"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "WWD",
+					"item": [
+						{
+							"name": "get what to do",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{url}}/wwds",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"wwds"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "create what to do",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "image",
+											"type": "file",
+											"src": "/C:/Users/Samnoeun.Run/Pictures/photo_2025-06-22_10-41-12.jpg"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{url}}/wwds?",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"wwds"
+									],
+									"query": [
+										{
+											"key": "",
+											"value": null
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "update what to do",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "_method",
+											"value": "PUT",
+											"type": "text"
+										},
+										{
+											"key": "image",
+											"type": "file",
+											"src": "/C:/Users/Samnoeun.Run/Pictures/KPT_Orphanage.jpg"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{url}}/wwds?",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"wwds"
+									],
+									"query": [
+										{
+											"key": "",
+											"value": null
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Impact",
+					"item": [
+						{
+							"name": "get impact",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{url}}/impacts",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"impacts"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "create impact",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "number",
+											"value": "150+",
+											"type": "text"
+										},
+										{
+											"key": "label",
+											"value": "Children Helped",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{url}}/impacts",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"impacts"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Donate Page",
+			"item": [
+				{
+					"name": "Get Donors",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "Create Donor",
+					"request": {
+						"method": "POST",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "Update Donors",
+					"request": {
+						"method": "PUT",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Donors",
+					"request": {
+						"method": "DELETE",
+						"header": []
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "url",
+			"value": "",
+			"type": "string"
+		}
+	]
+}
