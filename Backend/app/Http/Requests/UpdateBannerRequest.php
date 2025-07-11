@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Http\Requests;
+use App\Models\Banner;
 
 use Illuminate\Foundation\Http\FormRequest;
 
