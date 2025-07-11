@@ -3,12 +3,8 @@
     <!-- Full-width Slideshow Banner with Overlay -->
     <div class="relative w-full h-[600px] overflow-hidden mb-12 shadow-lg">
       <transition name="fade" mode="out-in">
-        <img
-          :src="currentSlide"
-          :key="currentSlide"
-          alt="Slideshow banner"
-          class="absolute inset-0 object-cover w-full h-full transition-opacity duration-1000"
-        />
+        <img :src="currentSlide" :key="currentSlide" alt="Slideshow banner"
+          class="absolute inset-0 object-cover w-full h-full transition-opacity duration-1000" />
       </transition>
       <!-- Overlay Content -->
       <div class="absolute inset-0 flex flex-col items-center justify-center z-20 text-center"
@@ -17,7 +13,8 @@
           Contact Us
         </h1>
         <p class="text-lg md:text-2xl text-white/90 mb-6 max-w-2xl animate-fadein delay-200">
-          We’re here to help! Reach out for support, partnership, or to learn more about our mission and how you can make a difference in the lives of children.
+          We’re here to help! Reach out for support, partnership, or to learn more about our mission and how you can
+          make a difference in the lives of children.
         </p>
         <button @click="openLocation"
           class="bg-orange-500 hover:bg-orange-600 text-white font-semibold px-10 py-4 rounded-full shadow-lg transition-all duration-300 animate-fadein delay-400 text-lg">
@@ -47,7 +44,10 @@
           <p class="text-gray-500 text-sm mb-2">
             Come see our center and meet the children and staff!
           </p>
-          <span class="text-orange-700 font-semibold underline underline-offset-2">2 Elizabeth St. London, UK</span>
+          <span class="text-orange-700 font-semibold underline underline-offset-2">Kampong Thom Orphanage, Cambodia
+            <link rel="stylesheet"
+              href="https://www.google.com/maps/place/Kampong+Thom+Orphanage/@12.7296869,104.893051,126m/data=!3m1!1e3!4m14!1m7!3m6!1s0x310e71a402a05283:0xe512dc3311d1c83f!2sOrphanage+Center+of+Kampong+Thom!8m2!3d12.6498437!4d104.9247905!16s%2Fg%2F11try4ml1d!3m5!1s0x310e732748de8a95:0xf9a1c165a5ef89bc!8m2!3d12.7299024!4d104.893444!16s%2Fg%2F113fr65b0?entry=ttu&g_ep=EgoyMDI1MDcwNy4wIKXMDSoASAFQAw%3D%3D">
+          </span>
         </div>
         <div
           class="group bg-white rounded-xl shadow-lg p-8 flex flex-col items-center transition-transform hover:-translate-y-2 hover:shadow-2xl cursor-pointer"
@@ -77,7 +77,7 @@
           <p class="text-gray-500 text-sm mb-2">
             Email us for more information or partnership opportunities.
           </p>
-          <span class="text-orange-700 font-semibold underline underline-offset-2">noreply@inoland.com</span>
+          <span class="text-orange-700 font-semibold underline underline-offset-2">chobunny22@gmail.com</span>
         </div>
       </div>
 
@@ -169,6 +169,8 @@ const contactForm = ref({
 })
 const isSubmittingContact = ref(false)
 
+
+
 const submitContactForm = async () => {
   isSubmittingContact.value = true
   await new Promise(resolve => setTimeout(resolve, 1000))
@@ -190,14 +192,21 @@ const submitNewsletter = async () => {
 }
 
 // Map
-const mapEmbedUrl = ref('https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3634.8234567890123!2d104.8899123!3d12.7304171!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x310e732748de8a95%3A0xf9a1c165a5ef89bc!2sKampong%20Thom%20Orphanage!5e0!3m2!1sen!2skh!4v1640995200000!5m2!1sen!2skh')
+const mapEmbedUrl = ref('https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d979.3634216743477!2d104.89305099999999!3d12.7296869!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x310e732748de8a95%3A0xf9a1c165a5ef89bc!2sKampong%20Thom%20Orphanage!5e0!3m2!1sen!2skh!4v1640995200000!5m2!1sen!2skh')
 
 const openInGoogleMaps = () => {
-  window.open("https://goo.gl/maps/4M4y43Er5EN2", '_blank')
+  window.open("https://www.google.com/maps/place/Kampong+Thom+Orphanage/@12.7296869,104.893051,126m/data=!3m1!1e3!4m14!1m7!3m6!1s0x310e71a402a05283:0xe512dc3311d1c83f!2sOrphanage+Center+of+Kampong+Thom!8m2!3d12.6498437!4d104.9247905!16s%2Fg%2F11try4ml1d!3m5!1s0x310e732748de8a95:0xf9a1c165a5ef89bc!8m2!3d12.7299024!4d104.893444!16s%2Fg%2F113fr65b0?entry=ttu&g_ep=EgoyMDI1MDcwNy4wIKXMDSoASAFQAw%3D%3D", '_blank')
 }
 const callPhone = () => window.open('tel:+85562961234')
-const sendEmail = () => window.open('mailto:info@kampongthomorphanage.org')
 const openLocation = () => openInGoogleMaps()
+
+const sendEmail = () => {
+  const subject = encodeURIComponent('Contact from Kampong Thom Orphanage Website')
+  const body = encodeURIComponent('Hello,\n\nI would like to get in touch regarding...\n\nBest regards,')
+  const gmailUrl = `https://mail.google.com/mail/?view=cm&fs=1&to=chobunny22@gmail.com&su=${subject}&body=${body}`
+  
+  window.open(gmailUrl, '_blank')
+}
 
 // Slideshow
 const slideImages = [
@@ -233,17 +242,21 @@ const setSlide = (index) => {
 .animate-fadein {
   animation: fadein 1s both;
 }
+
 .animate-fadein.delay-200 {
   animation-delay: 0.2s;
 }
+
 .animate-fadein.delay-400 {
   animation-delay: 1s;
 }
+
 @keyframes fadein {
   from {
     opacity: 0;
     transform: translateY(20px);
   }
+
   to {
     opacity: 1;
     transform: translateY(0);
